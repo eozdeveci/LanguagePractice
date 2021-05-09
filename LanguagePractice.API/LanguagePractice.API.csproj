@@ -21,4 +21,8 @@
     <Folder Include="Services\Abstract\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LanguagePractice.Data\LanguagePractice.Data.csproj" />
+  </ItemGroup>
+
 </Project>
