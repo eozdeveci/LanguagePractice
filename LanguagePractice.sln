@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguagePractice.API", "LanguagePractice.API\LanguagePractice.API.csproj", "{B06186E8-6BE7-49F9-AE01-DC1957A393CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanguagePractice.API", "LanguagePractice.API\LanguagePractice.API.csproj", "{B06186E8-6BE7-49F9-AE01-DC1957A393CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguagePractice.Data", "LanguagePractice.Data\LanguagePractice.Data.csproj", "{D77E85AE-F370-4AC4-8B46-563B835E64A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanguagePractice.Data", "LanguagePractice.Data\LanguagePractice.Data.csproj", "{D77E85AE-F370-4AC4-8B46-563B835E64A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguagePractice.DataAccess", "LanguagePractice.DataAccess\LanguagePractice.DataAccess.csproj", "{4F3531A5-B0CB-48A6-898F-E9A4F28E4DCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanguagePractice.DataAccess", "LanguagePractice.DataAccess\LanguagePractice.DataAccess.csproj", "{4F3531A5-B0CB-48A6-898F-E9A4F28E4DCB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanguagePractice.Core", "LanguagePractice.Core\LanguagePractice.Core.csproj", "{BA1EB74F-BD1D-4D2C-8140-FC0D765BC575}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguagePractice.Entities", "LanguagePractice.Entities\LanguagePractice.Entities.csproj", "{DF4DEF05-54C5-4097-BD74-7A8430CFDB62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{4F3531A5-B0CB-48A6-898F-E9A4F28E4DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F3531A5-B0CB-48A6-898F-E9A4F28E4DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F3531A5-B0CB-48A6-898F-E9A4F28E4DCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA1EB74F-BD1D-4D2C-8140-FC0D765BC575}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA1EB74F-BD1D-4D2C-8140-FC0D765BC575}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA1EB74F-BD1D-4D2C-8140-FC0D765BC575}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA1EB74F-BD1D-4D2C-8140-FC0D765BC575}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF4DEF05-54C5-4097-BD74-7A8430CFDB62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF4DEF05-54C5-4097-BD74-7A8430CFDB62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF4DEF05-54C5-4097-BD74-7A8430CFDB62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF4DEF05-54C5-4097-BD74-7A8430CFDB62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

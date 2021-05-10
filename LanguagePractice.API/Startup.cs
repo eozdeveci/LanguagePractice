@@ -1,4 +1,8 @@
 using LanguagePractice.Data;
+using LanguagePractice.Data.Abstract;
+using LanguagePractice.Data.Concrete;
+using LanguagePractice.DataAccess.Abstract;
+using LanguagePractice.DataAccess.Concrete.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,17 +32,20 @@ namespace LanguagePractice.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<LanguagePracticeDbContext>(options =>
-               options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"), b =>
-                   b.MigrationsAssembly("LanguagePractice.Data")
-               )
-            );
-            services.AddScoped<DbContext>(provider => provider.GetService<LanguagePracticeDbContext>());
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "LanguagePractice.API", Version = "v1" });
             });
+            services.AddSingleton<IUserService, UserManager>();
+            services.AddSingleton<IUserDal, EfUserDal>();
+
+            services.AddSingleton<IEngWordService, EngWordManager>();
+            services.AddSingleton<IEngWordDal, EfEngWordDal>();
+
+            services.AddSingleton<ITurWordService, TurWordManager>();
+            services.AddSingleton<ITurWordDal, EfTurWordDal>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

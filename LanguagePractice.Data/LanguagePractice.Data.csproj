@@ -10,7 +10,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LanguagePractice.Core\LanguagePractice.Core.csproj" />
+    <ProjectReference Include="..\LanguagePractice.DataAccess\LanguagePractice.DataAccess.csproj" />
+    <ProjectReference Include="..\LanguagePractice.Entities\LanguagePractice.Entities.csproj" />
   </ItemGroup>
 
 </Project>
