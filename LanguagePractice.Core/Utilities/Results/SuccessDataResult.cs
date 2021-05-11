@@ -20,7 +20,7 @@ namespace LanguagePractice.Core.Utilities.Results
         {
 
         }
-        public SuccessDataResult() : base(default, false)
+        public SuccessDataResult() : base(default, true)
         {
 
         }

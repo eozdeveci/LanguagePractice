@@ -8,9 +8,10 @@ namespace LanguagePractice.Data.Constants
 {
     public static class Messages
     {
-        public static string WordAdded = "Kelime eklendi";
-        public static string WordUpdated = "Kelime güncellendi";
-        public static string WordAlreadyExists = "Eklemek istediğiniz kelime zaten var";
-        public static string WordNotExists = "Kelime bulunamadı";
+        public static string RecordNotFound = "Kayıt bulunamadı";
+        public static string RecordAdded = "Kayıt eklendi";
+        public static string RecordUpdated = "Kayıt güncellendi";
+        public static string RecordAlreadyExists = "Eklemek istediğiniz kayıt zaten var";
+        public static string UsernameOrPasswordWrong = "Kullanıcı adı veya şifre hatalı";
     }
 }

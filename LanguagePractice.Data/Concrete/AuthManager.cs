@@ -2,6 +2,7 @@
 using LanguagePractice.Core.Utilities.Results;
 using LanguagePractice.Core.Utilities.Security.Hashing;
 using LanguagePractice.Data.Abstract;
+using LanguagePractice.Data.Constants;
 using LanguagePractice.Entities.DTOs;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace LanguagePractice.Data.Concrete
         public IDataResult<User> Register(UserForRegisterDto userForRegisterDto, string password)
         {
             byte[] passwordHash, passwordSalt;
-            HashingHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
+            HashingHelper.CreatePasswordHash(userForRegisterDto.Password, out passwordHash, out passwordSalt);
             var user = new User
             {
                 Email = userForRegisterDto.Email,
@@ -32,7 +33,7 @@ namespace LanguagePractice.Data.Concrete
                 Status = true
             };
             _userService.Add(user);
-            return new SuccessDataResult<User>(user, "Kayıt başarılı");
+            return new SuccessDataResult<User>(user, Messages.RecordAdded);
         }
 
         public IDataResult<User> Login(UserForLoginDto userForLoginDto)
@@ -40,11 +41,11 @@ namespace LanguagePractice.Data.Concrete
             var userToCheck = _userService.GetByUserName(userForLoginDto.UserName);
             if (userToCheck == null)
             {
-                return new ErrorDataResult<User>("Kullanıcı bulunamadı");
+                return new ErrorDataResult<User>(Messages.UsernameOrPasswordWrong);
             }
             if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userToCheck.PasswordHash, userToCheck.PasswordSalt))
             {
-                return new ErrorDataResult<User>("Parola hatalı");
+                return new ErrorDataResult<User>(Messages.UsernameOrPasswordWrong);
             }
 
             return new SuccessDataResult<User>(userToCheck, "Başarılı giriş");
@@ -54,7 +55,7 @@ namespace LanguagePractice.Data.Concrete
         {
             if (_userService.GetByUserName(userName) != null)
             {
-                return new ErrorResult("Kullanıcı mevcut");
+                return new ErrorResult(Messages.RecordAlreadyExists);
             }
             return new SuccessResult();
         }

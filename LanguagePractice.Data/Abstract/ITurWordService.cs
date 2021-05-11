@@ -11,8 +11,8 @@ namespace LanguagePractice.Data.Abstract
 {
     public interface ITurWordService
     {
-        IResult Add(TurWord engWord);
-        IResult Update(TurWord engWord);
+        IResult Add(TurWord turWord);
+        IResult Update(TurWord turWord);
         IDataResult<TurWord> GetById(int id);
         IDataResult<List<TurWord>> GetAll();
     }

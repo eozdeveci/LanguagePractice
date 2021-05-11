@@ -23,9 +23,9 @@ namespace LanguagePractice.Data.Concrete
         {
             var wordToCheck = _engWordDal.Get(w => w.Name == engWord.Name);
             if(wordToCheck != null)
-                new ErrorResult(Messages.WordAlreadyExists);
+                new ErrorResult(Messages.RecordAlreadyExists);
             _engWordDal.Add(engWord);
-            return new SuccessResult(Messages.WordAdded);
+            return new SuccessResult(Messages.RecordAdded);
         }
 
         public IDataResult<List<EngWord>> GetAll()
@@ -40,11 +40,11 @@ namespace LanguagePractice.Data.Concrete
 
         public IResult Update(EngWord engWord)
         {
-            var wordToUpdate = _engWordDal.Get(w => w.Name == engWord.Name);
+            var wordToUpdate = _engWordDal.Get(w => w.Id == engWord.Id);
             if (wordToUpdate == null)
-                new ErrorResult(Messages.WordNotExists);
+                new ErrorResult(Messages.RecordNotFound);
             _engWordDal.Update(engWord);
-            return new SuccessResult(Messages.WordUpdated);
+            return new SuccessResult(Messages.RecordUpdated);
         }
     }
 }

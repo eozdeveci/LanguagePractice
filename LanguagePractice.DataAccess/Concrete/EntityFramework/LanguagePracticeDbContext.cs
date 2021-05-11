@@ -14,5 +14,7 @@ namespace LanguagePractice.DataAccess.Concrete.EntityFramework
         public DbSet<User> Users { get; set; }
         public DbSet<TurWord> TurDictionary { get; set; }
         public DbSet<EngWord> EngDictionary { get; set; }
+        public DbSet<EngTurRelation> EngTurRelation { get; set; }
+        public DbSet<UserWordList> UserWordList { get; set; }
     }
 }

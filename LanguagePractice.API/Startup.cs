@@ -37,6 +37,9 @@ namespace LanguagePractice.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "LanguagePractice.API", Version = "v1" });
             });
+
+            services.AddSingleton<IAuthService, AuthManager>();
+
             services.AddSingleton<IUserService, UserManager>();
             services.AddSingleton<IUserDal, EfUserDal>();
 
@@ -45,6 +48,12 @@ namespace LanguagePractice.API
 
             services.AddSingleton<ITurWordService, TurWordManager>();
             services.AddSingleton<ITurWordDal, EfTurWordDal>();
+
+            services.AddSingleton<IEngTurRelationService, EngTurRelationManager>();
+            services.AddSingleton<IEngTurRelationDal, EfEngTurRelationDal>();
+
+            services.AddSingleton<IUserWordListService, UserWordListManager>();
+            services.AddSingleton<IUserWordListDal, EfUserWordListDal>();
 
         }
 

@@ -24,9 +24,9 @@ namespace LanguagePractice.Data.Concrete
         {
             var wordToCheck = _turWordDal.Get(w => w.Name == turWord.Name);
             if (wordToCheck != null)
-                new ErrorResult(Messages.WordAlreadyExists);
+                new ErrorResult(Messages.RecordAlreadyExists);
             _turWordDal.Add(turWord);
-            return new SuccessResult(Messages.WordAdded);
+            return new SuccessResult(Messages.RecordAdded);
         }
 
         public void Delete(TurWord entity)
@@ -53,9 +53,9 @@ namespace LanguagePractice.Data.Concrete
         {
             var wordToUpdate = _turWordDal.Get(w => w.Name == turWord.Name);
             if (wordToUpdate == null)
-                new ErrorResult(Messages.WordNotExists);
+                new ErrorResult(Messages.RecordNotFound);
             _turWordDal.Update(turWord);
-            return new SuccessResult(Messages.WordAdded);
+            return new SuccessResult(Messages.RecordAdded);
         }
     }
 }
