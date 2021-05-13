@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanguagePractice.DataAccess
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanguagePractice.Core", "LanguagePractice.Core\LanguagePractice.Core.csproj", "{BA1EB74F-BD1D-4D2C-8140-FC0D765BC575}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguagePractice.Entities", "LanguagePractice.Entities\LanguagePractice.Entities.csproj", "{DF4DEF05-54C5-4097-BD74-7A8430CFDB62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanguagePractice.Entities", "LanguagePractice.Entities\LanguagePractice.Entities.csproj", "{DF4DEF05-54C5-4097-BD74-7A8430CFDB62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
