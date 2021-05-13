@@ -13,6 +13,8 @@ namespace LanguagePractice.Entities.Concrete
         public int UserId { get; set; }
         public string ListName { get; set; }
         public int EngWordId { get; set; }
+        public int TotalRepeatCount { get; set; } = 10;
+        public int RepeatedCount { get; set; } = 0;
         public DateTime CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public bool isActive { get; set; }

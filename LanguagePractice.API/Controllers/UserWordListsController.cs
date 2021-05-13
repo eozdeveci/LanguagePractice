@@ -1,5 +1,6 @@
 ﻿using LanguagePractice.Data.Abstract;
 using LanguagePractice.Entities.Concrete;
+using LanguagePractice.Entities.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -47,6 +48,15 @@ namespace LanguagePractice.API.Controllers
         public IActionResult GetAll()
         {
             var result = _userWordListService.GetAll();
+            if (result.Success)
+                return Ok(result);
+            return BadRequest(result);
+        }
+
+        [HttpPost("updaterepeatedcount")]
+        public IActionResult UpdateRepeatedCount(UpdateRepeatedCountDto updateRepeatedCountDto)
+        {
+            var result = _userWordListService.UpdateRepeatedCount(updateRepeatedCountDto);
             if (result.Success)
                 return Ok(result);
             return BadRequest(result);

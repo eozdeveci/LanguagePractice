@@ -1,3 +1,5 @@
+using LanguagePractice.Core.CrossCuttingConcerns.Caching;
+using LanguagePractice.Core.CrossCuttingConcerns.Caching.Redis;
 using LanguagePractice.Data;
 using LanguagePractice.Data.Abstract;
 using LanguagePractice.Data.Concrete;
@@ -38,6 +40,12 @@ namespace LanguagePractice.API
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "LanguagePractice.API", Version = "v1" });
             });
 
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = Configuration.GetConnectionString("RedisConnection");
+                options.InstanceName = "LanguagePractice_";
+            });
+
             services.AddSingleton<IAuthService, AuthManager>();
 
             services.AddSingleton<IUserService, UserManager>();
@@ -55,6 +63,7 @@ namespace LanguagePractice.API
             services.AddSingleton<IUserWordListService, UserWordListManager>();
             services.AddSingleton<IUserWordListDal, EfUserWordListDal>();
 
+            services.AddSingleton<ICacheManager, RedisCacheManager>();  
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -15,12 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Services\Concrete\" />
-    <Folder Include="Services\Abstract\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\LanguagePractice.Data\LanguagePractice.Data.csproj" />
   </ItemGroup>
 

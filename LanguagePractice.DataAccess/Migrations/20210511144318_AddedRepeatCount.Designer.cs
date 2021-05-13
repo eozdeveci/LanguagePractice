@@ -3,15 +3,17 @@ using System;
 using LanguagePractice.DataAccess.Concrete.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace LanguagePractice.DataAccess.Migrations
 {
     [DbContext(typeof(LanguagePracticeDbContext))]
-    partial class LanguagePracticeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210511144318_AddedRepeatCount")]
+    partial class AddedRepeatCount
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

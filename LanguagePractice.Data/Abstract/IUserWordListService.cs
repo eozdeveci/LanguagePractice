@@ -1,5 +1,6 @@
 ﻿using LanguagePractice.Core.Utilities.Results;
 using LanguagePractice.Entities.Concrete;
+using LanguagePractice.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,6 @@ namespace LanguagePractice.Data.Abstract
         IResult Update(UserWordList userWordList);
         IDataResult<UserWordList> GetById(int id);
         IDataResult<List<UserWordList>> GetAll();
+        IResult UpdateRepeatedCount(UpdateRepeatedCountDto updateRepeatedCountDto);
     }
 }
